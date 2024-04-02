@@ -1,7 +1,13 @@
+using HuoltoWebApp.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<HuoltoContext>(options => //Lisätään tietokantaan yhteys
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); //ConnectionString löytyy appsettings.jsonista
 
 var app = builder.Build();
 
