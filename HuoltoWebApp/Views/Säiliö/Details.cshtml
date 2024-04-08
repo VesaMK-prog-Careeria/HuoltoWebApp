@@ -1,0 +1,48 @@
+﻿@model HuoltoWebApp.Models.Säiliö
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Säiliö</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SäiliöNro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SäiliöNro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Vakaus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Vakaus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Välitarkastus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Välitarkastus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Määräaikaistarkastus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Määräaikaistarkastus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SäiliöInfoId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SäiliöInfoId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.SäiliöId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
