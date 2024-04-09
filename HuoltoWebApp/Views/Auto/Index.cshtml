@@ -1,0 +1,77 @@
+﻿@model IEnumerable<HuoltoWebApp.Models.Auto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Auto</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RekNro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Katsastus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Piirturi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alkolukko)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nopeudenrajoitin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AutoInfoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Säiliö)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RekNro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Katsastus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Piirturi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alkolukko)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nopeudenrajoitin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutoInfoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Säiliö.SäiliöId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AutoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AutoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AutoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
