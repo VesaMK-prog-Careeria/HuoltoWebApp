@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HuoltoWebApp.Models.Säiliö>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SäiliöNro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vakaus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Välitarkastus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Määräaikaistarkastus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SäiliöInfoId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SäiliöNro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vakaus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Välitarkastus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Määräaikaistarkastus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SäiliöInfoId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SäiliöId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SäiliöId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SäiliöId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
